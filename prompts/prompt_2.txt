@@ -42,7 +42,7 @@ backend/
 5. If helpful, you may mention typical Flask project patterns to support interpretation.
 
 == Output ==
-Write markdown-formatted content into a file named `solution_2.txt`
+Write markdown-formatted content into a file named `solution_2.md`.
 
 == Goal ==
 Quickly understand the purpose of each core folder without reading full code contents.
