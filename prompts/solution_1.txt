@@ -1,0 +1,114 @@
+== Role ==
+You are an AI coding assistant.
+
+== Task ==
+Guide a developer in launching and running an unfamiliar code repository, **without referencing the README.md or any external documentation**. Use backend and frontend folders.
+
+== Instructions ==
+1. Analyze the repository's files and directory structure to determine the project type, language, and framework.
+2. Identify and explain the necessary setup steps, including environment configuration and dependency installation, using only the files present in the repository (e.g., package managers, config files, or environment templates).
+3. Provide clear, actionable terminal commands for each step, such as installing dependencies, initializing services, or setting environment variables.
+4. Assist the developer in running the project — including build steps, starting servers, running migrations, or launching scripts as needed.
+5. If any errors or issues arise during setup or execution, help debug and resolve them using only code-level information available in the repository.
+6. **Do not consult or reference the README.md or any other external documentation.**
+
+== Goal ==
+Ensure the developer can fully set up and run the project successfully using only your step-by-step guidance and the contents of the codebase.
+
+== Detailed Instructions ==
+
+### 1. Analyze Project Structure
+- The repository contains two main folders: `backend` (likely a Python/Flask app) and `frontend` (likely a JavaScript/React app).
+
+---
+
+### 2. Backend Setup (Flask/Python)
+
+**a. Environment & Dependencies:**
+- The `backend` folder contains `Pipfile`, `Pipfile.lock`, and `requirements.txt` for Python dependency management.
+- There is a `data.db` file (SQLite), and a `migrations/` folder (Alembic for database migrations).
+- Likely uses Flask (see `application.py`, `flaskr/` package).
+
+**b. Setup Steps:**
+1. Open a terminal and navigate to the `backend` directory:
+   ```sh
+   cd backend
+   ```
+2. (Recommended) Create and activate a virtual environment:
+   ```sh
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On macOS/Linux:
+   source venv/bin/activate
+   ```
+3. Install dependencies (choose one method):
+   - Using Pipenv (if installed):
+     ```sh
+     pip install pipenv
+     pipenv install
+     ```
+   - Or using pip and requirements.txt:
+     ```sh
+     pip install -r requirements.txt
+     ```
+4. (Optional) Set environment variables if required. Check for `.env` or config files (e.g., `config.py`).
+5. Run database migrations (if needed):
+   ```sh
+   flask db upgrade
+   # or, if using Alembic directly:
+   alembic upgrade head
+   ```
+6. Start the backend server:
+   ```sh
+   flask run
+   # or, if application.py is the entry point:
+   python application.py
+   ```
+
+**c. Debugging:**
+- If you encounter missing module errors, ensure your virtual environment is activated and dependencies are installed.
+- For database errors, check if `data.db` exists or if migrations need to be run.
+- For environment/config errors, review `config.py` and any `.env` templates.
+
+---
+
+### 3. Frontend Setup (React/Node.js)
+
+**a. Environment & Dependencies:**
+- The `frontend` folder contains `package.json`, `package-lock.json`, and `node_modules/` (if already installed).
+- Likely uses Vite (see `vite.config.ts`), React, and TypeScript.
+
+**b. Setup Steps:**
+1. Open a new terminal and navigate to the `frontend` directory:
+   ```sh
+   cd frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   # or, if using yarn:
+   yarn install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev
+   # or, if using yarn:
+   yarn dev
+   ```
+
+**c. Debugging:**
+- If you encounter missing package errors, ensure dependencies are installed.
+- For port conflicts, check the default port in `vite.config.ts` or scripts.
+- For environment variable issues, look for `.env` or similar files in the frontend directory.
+
+---
+
+### 4. General Debugging Guidance
+- Read error messages carefully and trace them to the relevant file or configuration.
+- Use only the information available in the codebase (do not consult README.md or external docs).
+- If a command fails, check for typos, missing dependencies, or required environment variables.
+
+---
+
+**You should now be able to set up and run both the backend and frontend of this project using only the codebase and these instructions.** 
