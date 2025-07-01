@@ -1,0 +1,8 @@
+- **controllers/**: Contains modules that handle business logic and coordinate between models and routes. Each controller typically manages a specific resource or feature (e.g., authentication, tags, tasks, users).
+- **models/**: Defines the data models and ORM classes representing database tables and entities. This is where the application's core data structures are specified.
+- **routes/**: Maps HTTP endpoints to controller functions. Each route module organizes the API endpoints for a specific resource or feature, following Flask's blueprint pattern.
+- **schemas/**: Contains serialization and validation logic, often using libraries like Marshmallow. Schemas define how data is structured when sent to or from the API.
+- **__init__.py**: Marks the directory as a Python package and may initialize the Flask app or import submodules.
+- **db.py**: Handles database setup and connections, such as initializing the ORM or database engine.
+- **extensions.py**: Registers and configures Flask extensions (e.g., database, migration, authentication plugins) for use throughout the app.
+- **utils.py**: Provides utility functions and helpers used across different parts of the backend application. 

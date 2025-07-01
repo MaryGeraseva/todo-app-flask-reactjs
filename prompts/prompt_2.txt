@@ -1,0 +1,48 @@
+== Task ==
+Analyze the project folder structure and generate a **Markdown summary** describing the purpose of each top-level directory.
+
+== Context ==
+You are looking at a Flask-based backend project. The code layout includes folders such as \`controllers\`, \`models\`, \`routes\`, and \`schemas\`, each containing logically grouped Python modules.
+
+== Input ==
+The following is the project structure:
+
+\`\`\`
+backend/
+└── flaskr/
+    ├── controllers/
+    │   ├── auth_controller.py
+    │   ├── tag_controller.py
+    │   ├── task_controller.py
+    │   └── user_controller.py
+    ├── models/
+    │   ├── __init__.py
+    │   ├── tag_model.py
+    │   ├── task_model.py
+    │   └── user_model.py
+    ├── routes/
+    │   ├── auth_route.py
+    │   ├── tag_route.py
+    │   ├── task_route.py
+    │   └── user_route.py
+    ├── schemas/
+    │   ├── plain_schema.py
+    │   ├── schema.py
+    ├── __init__.py
+    ├── db.py
+    ├── extensions.py
+    └── utils.py
+\`\`\`
+
+== Instructions ==
+1. Review the structure and identify the functional role of each top-level directory (\`controllers\`, \`models\`, \`routes\`, \`schemas\`, etc.).
+2. Write a Markdown list (\`-\`) summarizing the purpose of key folders based on naming conventions and file contents.
+3. Keep the descriptions concise but informative.
+4. Do **not** include implementation details — focus on architectural role, functions, features and naming.
+5. If helpful, you may mention typical Flask project patterns to support interpretation.
+
+== Output ==
+Write markdown-formatted content into a file named `solution_2.txt`
+
+== Goal ==
+Quickly understand the purpose of each core folder without reading full code contents.
