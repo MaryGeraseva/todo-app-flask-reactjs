@@ -1,0 +1,24 @@
+##OBJECTIVE:  
+Map all files, classes, and functions used in the core **login** feature. Identify relevant files involved in the complete user login flow using GenAI assistance. The output should be structured and comprehensive enough to support debugging, refactoring, or documentation.
+
+##ROLE  
+Act as a **Skilled Software Architect** and generate a **comprehensive map of the login flow**, identifying related files, classes, and functions using project-wide code analysis.
+
+##INST.RUCTIONS:  
+From the code perspective, use these guidelines:  
+- Search across the project for all relevant files and components connected to the login flow  
+- Include UI components, API handlers, services, utilities, and auth modules  
+- Group results by layer: e.g., Frontend (components, hooks), Backend (routes, controllers, services), Shared/Utils  
+- For each file, include:  
+  - File path  
+  - Key functions or classes used  
+  - Brief purpose of the file (1 sentence)  
+- Present data in a clear and hierarchical bullet format  
+- Only include items directly related to login (ignore unrelated auth actions like registration or password reset)
+
+##OUTPUT:  
+Save the results in a file named `solution_3.md`.  
+Output must include:
+- File paths
+- Key classes/functions
+- Descriptions (brief)
