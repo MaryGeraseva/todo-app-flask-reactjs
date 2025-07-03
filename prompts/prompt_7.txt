@@ -1,0 +1,80 @@
+##OBJECTIVE:  
+Identify and fix a **logic error** in a file that has been intentionally broken. Use the **AI Agent**, supported by runtime or compile-time logs, to detect and correct the issue.
+
+##ROLE  
+Act as an **AI Debugging Agent** and analyze the error output to locate and resolve a logic bug (e.g., off-by-one error, null check omission, incorrect conditional).
+
+##INST.RUCTIONS:  
+From the code perspective, use these guidelines:  
+- Analyze the error message or traceback from the latest saved run  
+- Use runtime or compile-time logs to locate the source of failure  
+- Identify the specific logic flaw causing the error  
+- Fix the logic while preserving the original intent and structure of the code  
+- Add a short inline comment at the fix site explaining the correction  
+- Do not alter unrelated parts of the code
+
+##OUTPUT:  
+Output the corrected version of the broken file  
+Include only the fixed source code with a brief inline comment explaining the patch  
+Do not include explanations, logs, or descriptions outside of the code block
+
+##ERROR:
+127.0.0.1 - - [03/Jul/2025 18:11:46] "POST /api/v1/auth/sign-in HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask\views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask\views.py", line 191, in dispatch_request
+    return current_app.ensure_sync(meth)(**kwargs)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\webargs\core.py", line 657, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask_smorest\arguments.py", line 83, in wrapper
+    return func(*f_args, **f_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask_smorest\response.py", line 89, in wrapper
+    func(*args, **kwargs)
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\flaskr\routes\auth_route.py", line 14, in post
+    return AuthController.sign_in(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\flaskr\controllers\auth_controller.py", line 24, in sign_in
+    token = create_access_token(identity=str(user_registered.id))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask_jwt_extended\utils.py", line 175, in create_access_token
+    return jwt_manager._encode_jwt_from_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask_jwt_extended\jwt_manager.py", line 527, in _encode_jwt_from_config
+    secret=self._encode_key_callback(identity),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask_jwt_extended\default_callbacks.py", line 161, in default_encode_key_callback
+    return config.encode_key
+           ^^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask_jwt_extended\config.py", line 36, in encode_key
+    return self._private_key if self.is_asymmetric else self._secret_key
+                                                        ^^^^^^^^^^^^^^^^
+  File "C:\work\ai\todo-app-flask-reactjs-1\backend\venv\Lib\site-packages\flask_jwt_extended\config.py", line 238, in _secret_key
+    raise RuntimeError(
+RuntimeError: JWT_SECRET_KEY or flask SECRET_KEY must be set when using symmetric algorithm "HS256"

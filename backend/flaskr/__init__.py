@@ -19,6 +19,10 @@ def create_app(test_config=None):
     else:
         app.config.from_object(test_config)
 
+    # Ensure SECRET_KEY is set for JWT (fixes RuntimeError)
+    if not app.config.get("SECRET_KEY"):
+        app.config["SECRET_KEY"] = "change-this-secret-key"  # Added to satisfy flask_jwt_extended
+
     db.init_app(app)
     migrate.init_app(app, db)
     api.init_app(app)
