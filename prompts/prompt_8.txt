@@ -1,0 +1,19 @@
+##OBJECTIVE:  
+Improve and enrich the comments in the file `backend\flaskr\routes\task_route.py` to enhance readability, clarity, and maintainability.
+
+##ROLE  
+Act as a **Senior Python Developer and Technical Writer** and enhance the code by adding clear, concise, and relevant **block and inline comments**.
+
+##INST.RUCTIONS:  
+From the code perspective, use these guidelines:  
+- Analyze the file and identify missing or weak comments  
+- Add or improve **block comments** above function definitions to explain purpose and behavior  
+- Add **inline comments** to clarify key lines or non-obvious logic  
+- Avoid redundant comments that merely restate code  
+- Ensure comment tone is professional and helpful for future developers  
+- Preserve existing code functionality without modification
+
+##OUTPUT:  
+Output the updated file `task_route.py`  
+Only include the modified source code with improved and added comments.  
+No extra explanation or changelog – only the updated code block.
