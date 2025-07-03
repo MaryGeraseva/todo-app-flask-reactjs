@@ -1,0 +1,19 @@
+##OBJECTIVE:  
+Create a **runnable test file skeleton** for the class `UserController` located at `\backend\flaskr\controllers\user_controller.py`. The goal is to scaffold a test file with proper structure, imports, and placeholders for test methods.
+
+##ROLE  
+Act as a **Senior Python Test Engineer** and generate a boilerplate **pytest-style test file** with stub functions and comments for coverage expansion.
+
+##INST.RUCTIONS:  
+From the code perspective, use these guidelines:  
+- Use `pytest` as the test framework  
+- Import the `UserController` class and any required dependencies  
+- Include a `TestUserController` class  
+- Define placeholder test methods for key functions in `UserController` (e.g., `test_get_user`, `test_create_user`, etc.)  
+- Use docstrings or inline comments to explain what each test should cover  
+- Include a basic `setup_method` or fixture example if needed  
+- Ensure the file is syntactically correct and runnable even with placeholder test bodies
+
+##OUTPUT:  
+Output the complete test skeleton in a single Python code block.  
+The test file must be named according to convention, e.g., `solution_4.py`, and placed under `solutions/` directory.
