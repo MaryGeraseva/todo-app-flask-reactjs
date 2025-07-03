@@ -1,0 +1,28 @@
+##OBJECTIVE:  
+Propose a comprehensive **test strategy and matching tech stack** for the `UserController` located at `\backend\flaskr\controllers\user_controller.py`.
+
+##ROLE  
+Act as a **Senior QA and AQA Architect** and generate a structured test strategy including types of tests (unit, integration, end-to-end) and recommended tools for each layer.
+
+##INST.RUCTIONS:  
+From the code perspective, use these guidelines:  
+- Identify appropriate test layers: Unit, Integration, End-to-End (E2E)  
+- For each test type, describe:
+  - What should be tested
+  - Why it's important
+  - Recommended tools/libraries (Python ecosystem)
+- Address mocking, data setup, and test isolation techniques  
+- Suggest folder/file structure for organizing the tests  
+- Mention CI/CD considerations for automation if applicable  
+- Output must be clearly organized and ready for documentation use
+
+##OUTPUT:  
+Save the results to `solutions/solution_5.md`  
+Output should be formatted with section headers like:
+- Test Strategy Overview  
+- Unit Tests  
+- Integration Tests  
+- End-to-End (E2E) Tests  
+- Suggested Tech Stack  
+- Test Organization Structure  
+- CI/CD & Automation Notes
